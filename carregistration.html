@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT 160 - Lab 2 - Variable</title>
+    <link rel="stylesheet" href="carregistration.css">
+    <script>
+        function getTotal() {
+            //Declaration 
+            const costCap = 100; // cost of registration
+
+            // Input - get 1 variables: discount
+            const discount = parseInt(document.getElementById('discount').value);
+            let total = 0;
+            let full = 100;
+            //Processing - 100 minus the discount
+            total = (full - discount);
+            //Output - 
+            document.querySelector('#total').innerHTML = `Total: $${total} `; 
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Vehicle Registration</h1>
+        <label>Full Name: <input type="text" id="name"></label>
+        <label>Vehicle Make: <input type="text" id="make"></label>
+        <label>Vehile Model: <input type="text" id="model"></label>
+        <label>Vehile Year: <input type="text" id="year"></label>
+        <label>Discout Amount: <input type="text" id="discount" value="$0"></label>
+        <button onclick="getTotal()">Total</button>
+        <p id="total"></p> <p>
+    </div>
+</body>
+</html>
