@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Slip</title>
+
+    <link rel="stylesheet" href="css/numbers.css">
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Sales Slip</h1>
+        <h2>Owen Rowe</h2>
+    </header>
+    <main>
+        <h3>Line Items</h3>
+        <div class="tableform">
+            <span class="heading">Description</span>
+            <span class="heading">Quantity</span>
+            <span class="heading">Price</span>
+            <label><input type="text" id="desc1" placeholder="Socks"></label>
+            <label><input type="text" id="q1" size="3"></label>
+            <label><input type="text" id="p1" size="5"></label>
+            <label><input type="text" id="desc2" placeholder="Shoes"></label>
+            <label><input type="text" id="q2" size="3"></label>
+            <label><input type="text" id="p2" size="5"></label>
+            <label><input type="text" id="desc3" placeholder="Pants"></label>
+            <label><input type="text" id="q3" size="3"></label>
+            <label><input type="text" id="p3" size="5"></label>
+        </div>
+        <h3>Discount</h3>
+        <label class="heading">Discount %: <input type="text" id="discount" placeholder=".15"></label>
+        <h3>Tax</h3>
+        <label class="heading">Tax %: <input type="text" id="tax" placeholder=".075"></label>
+
+        <div class="process"><button onclick="getTotal()">Submit Sales Slip</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Owen Rowe &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        function getTotal() {
+            // INPUT
+            let w1 = 0;
+            let o1 = 0;
+            let w2 = 0;
+            let o2 = 0;
+            let w3 = 0;
+            let o3 = 0;
+            let d = 0;
+            let t = 0;
+
+            const q1 = parseInt(document.querySelector('#q1').value);
+            const p1 = parseFloat(document.querySelector('#p1').value);
+            const q2 = parseInt(document.querySelector('#q2').value);
+            const p2 = parseFloat(document.querySelector('#p2').value);
+            const q3 = parseInt(document.querySelector('#q3').value);
+            const p3 = parseFloat(document.querySelector('#p3').value);
+            const discount = parseFloat(document.querySelector('#discount').value);
+            const tax = parseFloat(document.querySelector('#tax').value);
+
+            // PROCESSING
+            let total = ((q1 * p1) + (q2 * p2) + (q3 * p3)) - (discount) + (tax);
+
+            //OUTPUT
+            document.querySelector('#output').innerHTML = 'Total Price: $ <em>${total}</em>';
+        }
+    </script>
+
+</body>
+
+</html>

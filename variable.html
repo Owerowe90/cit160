@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="carregistration.css">
     <script>
         function getTotal() {
-            //Declaration 
+            // Declaration
             const costCap = 100; // cost of registration
 
             // Input - get 1 variables: discount
             const discount = parseInt(document.getElementById('discount').value);
             let total = 0;
             let full = 100;
-            //Processing - 100 minus the discount
+            // Processing - 100 minus the discount
             total = (full - discount);
-            //Output - 
-            document.querySelector('#total').innerHTML = `Total: $${total} `; 
+            // Output - 
+            document.querySelector('#total').innerHTML = `Total Amount Due: $${total} `; 
         }
 
     </script>
