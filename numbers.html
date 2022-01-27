@@ -70,10 +70,13 @@
             tax = parseFloat(document.querySelector('#tax').value);
 
             // PROCESSING
-            let subtotal = (q1 * p1) + (q2 * p2) + (q3 * p3) - (discount)
-            let total = subtotal + tax
+            let subtotal = (q1 * p1) + (q2 * p2) + (q3 * p3)
+            let subtotal1 = (subtotal * discount)
+            let subtotal2 = (subtotal - subtotal1)
+            let total = subtotal2 * tax
+            let total1 = subtotal2 + total
             //OUTPUT
-            document.querySelector('#output').innerHTML = `The Total Price: $${total.toFixed(2)}`;
+            document.querySelector('#output').innerHTML = `The Total Price: $${total1.toFixed(2)}`;
         }
     </script>
 
