@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/poundToKilograms.css">
+    <script>
+        function getTotal() {
+            // Input - get 1 variables: discount
+            const pounds = parseInt(document.getElementById('pounds').value);
+            let total = 0;
+            let kilo = parseFloat(2.2046)
+
+            // Processing - (lbs) / 2.2046
+            total = (pounds / kilo);
+            // Output 
+            document.querySelector('#total').innerHTML = `${total.toFixed(1)} Kilograms`; 
+        }
+    </script>
+</head>
+<body>
+    <main>
+    <div class="pounds">
+        <h1>Pounds To Kilograms</h1>
+        <label>Pounds: <input type="text" id="pounds" placeholder="50"></label>
+        <button onclick="getTotal()">Total</button>
+        <p id="total"></p> <p>
+    </div>
+    </main>
+    
+</body>
+</html>

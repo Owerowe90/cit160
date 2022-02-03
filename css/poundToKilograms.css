@@ -1,0 +1,33 @@
+body {
+    background-color: aqua;
+    max-width: 500px;
+	margin: 0 auto;
+}
+
+h1 {
+    margin: 0;
+	text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+    padding: 10px;
+    border: 10px solid green;
+    margin: 20px;
+    border-radius: 75%;
+}
+
+main {
+    margin: 10px auto;
+	border: 5px dotted green;
+	padding: .5rem;
+	background-color: red;
+	box-shadow: 0 0 100px;
+}
+
+p {
+    margin: auto;
+    border: 5px dotted green;
+    padding: 10px;
+    background-color: green;
+}
