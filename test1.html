@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Paystub</h1>
+    </header>
+    <main>
+        <span class="heading">Hours Worked</span>
+        <label><input type="text" id="regular" placeholder="40"></label>
+        <span class="heading">Overtime Worked</span>
+        <label><input type="text" id="overtime" placeholder="2.5"></label>
+
+        <div class="process"><button onclick="getTotal()">Submit Hours Worked</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    
+    <script>
+        function getTotal() {
+            // INPUT REGULAR AND OVERTIME HOURS
+            let regular = 0;
+            let overtime = 0;
+            let tax = .15;
+
+            regular = parseFloat(document.querySelector('#regular').value);
+            overtime = parseFloat(document.querySelector('#overtime').value);
+
+            // PROCESSING TOTAL HOURS MINUS TAXES
+            reg = (regular * 15)
+            over = (overtime * 22.50)
+            taxamount = tax * (reg + over)
+            total = (reg + over) - taxamount
+            
+            //OUTPUT 
+            document.querySelector('#output').innerHTML = `Net Pay: $${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

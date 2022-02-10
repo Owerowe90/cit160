@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Cylinder Volume</h1>
+    </header>
+    <main>
+        <span class="heading">Height:</span>
+        <label><input type="text" id="h" placeholder="20"></label>
+        <span class="heading">Radius:</span>
+        <label><input type="text" id="r" placeholder="5"></label>
+
+        <div class="process"><button onclick="getTotal()">Find Volume</button>
+        </div>
+        <p id="output"></p>
+    </main>
+    
+    <script>
+        function getTotal() {
+            // INPUT HEIGHT AND RADIUS, MAKE PI SIMPLER
+            let h = 0;
+            let r = 0;
+            let pi = Math.PI;
+
+            h = parseFloat(document.querySelector('#h').value);
+            r = parseFloat(document.querySelector('#r').value);
+
+            // PROCESSING V=πr2h
+            power = (r * r)
+            volume = pi * power * h
+            
+            //OUTPUT 
+            document.querySelector('#output').innerHTML = `Volume: ${volume.toFixed(0)}`;
+        }
+    </script>
+</body>
+</html>
