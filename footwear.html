@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear</title>
+</head>
+
+<body>
+    <h1>Correct Footwear</h1>
+    <select id="weather">
+        <option value="">--Choose the Weather--</option>
+        <option value="hot">Hot</option>
+        <option value="rain">Rain</option>
+        <option value="snow">Snow</option>
+        <option value="sunny">Sunny</option>
+    </select><br>
+    <hr>
+    <button onclick="checkWeather()">Correct Footwear</button>
+    <hr>
+    <p id="correct"></p>
+
+    <script>
+        function checkWeather() {
+
+        let answer = "";
+
+        // INPUT
+        weather = document.querySelector('#weather').value;
+
+        // PROCESSING
+        if (weather === "hot") {
+            answer = "Sandals";
+        }
+        else if (weather === "rain"){
+            answer = "Galoshes";
+        }
+        else if (weather === "snow") {
+            answer = "Boots";
+        }
+        else if (weather === "sunny") {
+            answer = "No Shoes";
+        }  
+
+        // OUTPUT
+        document.querySelector('#correct').innerHTML = `${answer} are the right footwear for you!`;
+        }
+
+    </script>
+</body>
+</html>
