@@ -3,7 +3,7 @@
 
         function storyComplete() {
 	// INPUT
-	    firstname = document.querySelector('#firstname').value;
+	firstname = document.querySelector('#firstname').value;
         fruit = document.querySelector('#fruit').value;
         animal1 = document.querySelector('#animal1').value;
         animal2 = document.querySelector('#animal2').value;
