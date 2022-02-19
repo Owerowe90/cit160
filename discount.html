@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+</head>
+
+<body>
+    <header>
+        <h1>Retail Store</h1>
+        <h2>Owen Rowe</h2>
+    </header>
+    <main>
+        <label>Subtotal: $<input type="text" id="subtotal" placeholder="50.00"></label>
+        <select id="date">
+            <option value=>--What day is it?--</option>
+            <option value="sunday">Sunday</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+        </select><br>
+        <label><button onclick="checkInputs()">Process Payment</button></label>
+        <p id='payment'></p>
+    </main>
+
+    <script>
+        function checkInputs() {
+            // // inputs
+            let userInput = parseFloat(document.querySelector('#subtotal').value);
+            let theDate = document.querySelector('#date').value;
+            console.log(theDate)
+            //processing
+            if (theDate === "sunday") {
+                total = "We are not open on Sundays.";
+            } 
+            else if (theDate === "tuesday" || theDate === "wednesday") {
+                if (userInput >= 50) {
+                    discount = parseFloat(userInput - (userInput * .10))
+                    total = parseFloat(discount + (discount * .06))
+                } else {
+                    total1 = parseFloat(userInput * .06)
+                    total = parseFloat(userInput + total1)
+                }
+            } 
+            else if (theDate === "monday" || theDate === "thursday" || theDate === "friday" || theDate === "saturday") {
+                total1 = parseFloat(userInput * .06)
+                total = parseFloat(userInput + total1)
+            }
+
+            // output
+            document.querySelector('#payment').textContent = `${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+
+</html>
