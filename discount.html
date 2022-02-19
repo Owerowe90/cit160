@@ -37,24 +37,29 @@
             console.log(theDate)
             //processing
             if (theDate === "sunday") {
-                total = "We are not open on Sundays.";
-            } 
+                total = `Wait... How did you get in here?? We are not open on Sundays!`;
+             
+            document.querySelector('#payment').textContent = `${total}`;}
+            
             else if (theDate === "tuesday" || theDate === "wednesday") {
                 if (userInput >= 50) {
                     discount = parseFloat(userInput - (userInput * .10))
                     total = parseFloat(discount + (discount * .06))
+                    document.querySelector('#payment').textContent = `${total.toFixed(2)}`;
                 } else {
                     total1 = parseFloat(userInput * .06)
                     total = parseFloat(userInput + total1)
+                    document.querySelector('#payment').textContent = `${total.toFixed(2)}`;
                 }
             } 
             else if (theDate === "monday" || theDate === "thursday" || theDate === "friday" || theDate === "saturday") {
                 total1 = parseFloat(userInput * .06)
                 total = parseFloat(userInput + total1)
+                document.querySelector('#payment').textContent = `${total.toFixed(2)}`;
             }
 
             // output
-            document.querySelector('#payment').textContent = `${total.toFixed(2)}`;
+            
         }
     </script>
 </body>
