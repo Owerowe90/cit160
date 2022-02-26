@@ -19,16 +19,14 @@
             ('#upperLimit').value);
             let sum = 0;
             // processing - compute sum
-            // for (let i = 1; i <= n; i= i + 2) {
-            //     sum += i;
-            // }
-            let i = 1;
-            while (i <= n) {
+            for (let i = 1; i <= n; i= i + 2) {
                 sum += i;
-                i = i + 2;
             }
-
-
+            // let i = 1;
+            // while (i <= n) {
+            //     sum += i;
+            //     i = i + 2;
+            // }
 
             // output
             document.querySelector('#sum').textContent = sum;
