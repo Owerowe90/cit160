@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divosor</title>
+</head>
+<body>
+    <input type="text" id="start" size="5" placeholder="Start"><br>
+    <input type="text" id="end" size="5" placeholder="End"><br>
+    <input type="text" id="divisor" size="5" placeholder="Divisor"><br>
+    <button type="button" onclick="divisible()">Click Here</button>
+    <div id="divide"></div>
+
+    <script>
+        function divisible() {
+            // Input (Getting the Start, End and Divisor values)
+            var start = parseInt(document.getElementById('start').value);
+            var end = parseInt(document.getElementById('end').value);
+            var divisor = parseInt(document.getElementById('divisor').value);
+            var output = "";
+
+            // Processing
+            for (i = start; i <= end; i++) {
+                if (i % divisor == 0) {
+                    output += `${i} `; 
+                }
+            }
+            // Output
+        document.getElementById("divide").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

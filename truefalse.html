@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+</head>
+<body>
+  <p>Please enter two numbers:</p>
+  <input type="text" id="one" size="5" placeholder="Number 1"><br>
+  <input type="text" id="two" size="5" placeholder="Number 2">
+  <button type="button" onclick="truefalse()">Click Here</button>
+  <div id="truefalse"></div>
+
+  <script>
+    function truefalse() {
+        // Input
+        let one = parseFloat(document.querySelector('#one').value);
+        let two = parseFloat(document.querySelector('#two').value);
+        boolean = ''
+        // Processing
+        if (one > 5 && two > 5 || (one + two) > 20){
+            boolean = `True`;
+        }
+        else {
+            boolean = `False`;
+        }
+        // Output
+        document.querySelector('#truefalse').innerHTML = boolean;
+    } 
+  </script>
+</body>
+</html>
