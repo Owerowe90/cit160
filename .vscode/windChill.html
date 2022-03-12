@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wind Chill</title>
+</head>
+<body>
+    <h1>Wind Chill</h1>
+    <label>Temperature: <input type="text" id="temp" placeholder="In Fahrenheit"></label><br>
+    <label>Wind Speed: <input type="text" id="windspeed" placeholder="In MPH"></label><br>
+
+    <button onclick="doInputOutput()">Wind Chill</button>
+    <div id="total"></div>
+
+    <script>
+        function doInputOutput() {
+            // declarations 
+            let temperature = parseFloat(document.querySelector('#temp').value);
+            let windspeed = parseFloat(document.querySelector('#windspeed').value);
+            let windchill = 0;
+            // inputs
+
+            // if inputs meet specification
+            if (temperature < 50 && windspeed > 3) {
+                windchill = windChill(temperature, windspeed);
+            }
+            else {
+                document.write("An error has occured. Please reload and put the correct information in.")
+            }
+
+            // outputs
+            document.querySelector('#total').innerHTML = `Wind Chill: ${windchill.toFixed(2)} F`;
+        }
+
+        function windChill(temperature, windspeed){
+            // 35.74 + 0.6215 t - 35.75 s0.16 + 0.4275 t s0.16
+            let result = 35.74 + (0.6215 * temperature) - (35.75 * Math.pow(windspeed, 0.16)) + (0.4275 * temperature * Math.pow(windspeed, 0.16));
+            return result;
+        }
+    </script>
+</body>
+
+</html>
